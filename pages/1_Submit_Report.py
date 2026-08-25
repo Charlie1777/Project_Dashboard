@@ -57,6 +57,7 @@ def extract_text_from_docx(uploaded_file) -> str:
     paragraphs = [p.text.strip() for p in doc.paragraphs if p.text.strip()]
     return "\n".join(paragraphs)
 
+# ── AI EXTRACTION (Updated to Gemini 2.5 Flash) ───────────────────────────
 def parse_report_with_ai(member, week, report_text):
     client = genai.Client(api_key=st.secrets["GEMINI_API_KEY"])
     prompt = f"""
